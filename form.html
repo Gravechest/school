@@ -1,0 +1,43 @@
+<DOCTYPE hmtl>
+<html>
+<form action="" method="POST">
+    <label for="fname">Voornaam:</label><br>
+    <input type="text" id="fname" name="first_name"><br>
+	<label for="bname">tussenvoegsel:</label><br>
+    <input type="text" id="bname" name="between_name"><br><br>
+    <label for="lname">Achternaam:</label><br>
+    <input type="text" id="lname" name="last_name"><br><br>
+	<label for="adress">Adres:</label><br>
+    <input type="text" id="adress" name="adress"><br><br>
+	<label for="pcode">Postcode:</label><br>
+    <input type="text" id="pcode" name="post_code"><br><br>
+	<label for="ltown">Woonplaats:</label><br>
+    <input type="text" id="ltown" name="woonplaats"><br><br>
+	<label for="email">Email adres:</label><br>
+    <input type="text" id="email" name="emailadress"><br><br>
+	<label for="label">Kies een opleiding:</label><br>
+	<p>Software Developer</p>
+	<input type="radio" id="label" name="opleiding" value="Software Developer"><br>
+	<p>Allround Medewerker IT Systems and Device</p>
+	<input type="radio" id="label" name="opleiding" value="Allround Medewerker IT Systems and Device"><br>
+	<p>Expert IT System and Devices</p>
+	<input type="radio" id="label" name="opleiding" value="Expert IT System and Devices"><br>
+	<p>Medewerker ICT Support</p>
+	<input type="radio" id="label" name="opleiding" value="Medewerker ICT Support"><br><br>
+	<p>Selecteer opleidings plaats:</p>
+    <input type="submit" value="submit" name="submit">
+</form>
+
+<?php
+echo $_POST["first_name"], "<br>";
+echo $_POST["between_name"], "<br>";
+echo $_POST["last_name"], "<br>";
+echo $_POST["adress"], "<br>";
+echo $_POST["post_code"], "<br>";
+echo $_POST["woonplaats"], "<br>";
+echo $_POST["emailadress"], "<br>";
+echo $_POST["opleiding"];
+
+
+?>
+</html>
