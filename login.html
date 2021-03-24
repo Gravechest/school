@@ -1,0 +1,22 @@
+<DOCTYPE hmtl>
+<html>
+<form action="info.php" method="post">
+    <input name="login">email</input><br>
+	<input name="wachtwoord">wachtwoord</input><br>
+	<input type="submit">
+</form>
+
+<?php
+$username = "root";
+$servername = "127.0.0.1";
+$connect = new mysqli($servername,$username);
+$connect->query("CREATE DATABASE datbas");
+$connect = new mysqli($servername,$username,NULL,"datbas");
+$connect->query("CREATE TABLE logininfo (email VARCHAR(30),wachtwoord VARCHAR(30))");
+$connect->query("INSERT INTO logininfo(email,wachtwoord) VALUES ('frederik@gmail.com','root')");
+$logindata = $connect->query("SELECT email,wachtwoord FROM logininfo");
+$login = $logindata->fetch_assoc();
+
+if($_POST["login"] === $login["email"] && $_POST["wachtwoord"] === $login["wachtwoord"]){echo "u bent ingelogt";}
+?>
+</html>
