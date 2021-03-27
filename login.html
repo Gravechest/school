@@ -17,6 +17,11 @@ $connect->query("INSERT INTO logininfo(email,wachtwoord) VALUES ('frederik@gmail
 $logindata = $connect->query("SELECT email,wachtwoord FROM logininfo");
 $login = $logindata->fetch_assoc();
 
-if($_POST["login"] === $login["email"] && $_POST["wachtwoord"] === $login["wachtwoord"]){echo "u bent ingelogt";}
+if($_POST["login"] === $login["email"] && $_POST["wachtwoord"] === $login["wachtwoord"])
+{header("Location: ./form.php"); echo "u bent ingelogt";}
+else if ($_POST["login"] === $login["email"]){echo "fout wachtwoord";}
+else {
+	echo "fout emailadress";
+	}
 ?>
 </html>
