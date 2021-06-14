@@ -1,0 +1,10 @@
+<html>
+<script>
+var einddatum = prompt("Wat is de einddatum JJJJ-MM-DD");
+var datum = new Date(einddatum);
+console.log(datum);
+var tijd_nu = Date.now();
+var dag = 86400000;
+document.write('<br> er zijn nog:' + );
+</script>
+</html>
