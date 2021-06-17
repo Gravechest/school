@@ -1,0 +1,52 @@
+<DOCTYPE html>
+    <html lang ="nl">
+    <head>
+    <charset="UTF-8">
+    <title>lab 01</title>
+    </head>
+    <body>
+    <h2>Lab 01</h2>
+    <h3>Factuur</h3>
+    <script>
+    var maanden = [31,28,31,30,31,30,31,31,30,31,30,31];
+    var vandaag = new Date();
+    var termijn = new Date();
+    var termijndag = termijn.getDay();
+    var termijnmaand = termijn.getMonth();
+    var termijnjaar = termijn.getFullYear();
+    var dag = vandaag.getDay();
+    var maand = vandaag.getMonth();
+    var jaar = vandaag.getFullYear();
+    document.write(dag+"-"+maand+"-"+jaar+"<br>");
+    document.write(dag+"-"+maand+"-"+jaar+"<br>");
+    dag += 30;
+    if (dag > maanden[maand]){
+        dag -= maanden[maand];
+        maand += 1;
+        if(maanden[maand] == 12){
+            jaar += 1;
+        }
+    }
+    if (termijnjaar < jaar){
+        document.write("meld incassobureau");
+    }
+    else{
+        if(termijnmaand < maand){
+            document.write("meld incassobureau");
+        }
+        else{
+            if(termijndag < dag){
+                document.write("meld incassobureau");
+            }
+            else{
+                var restdag = termijndag - dag;
+                var restmaand = termijnmaand - maand;
+                var restjaar = termijnjaar - jaar;
+                document.write("resterende dagen:" + restdag + restmaand * 30 + jaar * 356);
+            }
+        }
+    }
+    document.write(dag+"-"+maand+"-"+jaar+"<br>");
+    </script>
+    </body>
+</html>
