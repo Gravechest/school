@@ -1,0 +1,36 @@
+<DOCTYPE html>
+    <html lang ="nl">
+    <head>
+    <charset="UTF-8">
+    <title>lab 01</title>
+    </head>
+    <body>
+    <h2>Lab 01</h2>
+    <h3>Factuur</h3>
+    <script>
+    var rol = prompt("wat is je rol?");
+    var code = prompt("wat is je inlogcode");
+    switch(rol){
+        case 'admin':
+            if (code == 'admin'){
+                document.write("welkom admin");
+            }
+            else{
+                document.write("code ongeldig");
+            }
+            break;
+        case 'student':
+            if (code == 'student'){
+                document.write("welkom student");
+            }
+            else{
+                document.write("code ongeldig");
+            }
+            break;
+        default:
+            document.write("rol is ongeldig");
+            break;
+        }
+    </script>
+    </body>
+</html>
