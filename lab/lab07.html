@@ -1,0 +1,67 @@
+<DOCTYPE html>
+    <html lang ="nl">
+    <head>
+    <charset="UTF-8">
+    <title>lab 01</title>
+    </head>
+    <body>
+    <h2>Lab 01</h2>
+    <h3>Factuur</h3>
+    <script>
+    var bezorgkosten = 15;
+    var maanden = [31,28,31,30,31,30,31,31,30,31,30,31];
+    var datum = new Date();
+    var dag = datum.getDate();
+    var maand = datum.getMonth();
+    var jaar = datum.getFullYear();
+    if (jaar % 4 == 0){
+        maanden[1] = 29;
+    }
+    var bedrag;
+    var btw;
+    var totaal;
+    var prijs = 29.90;
+    var woonplaats = prompt("voer je woonplaats in");
+    var postcode = prompt("voer je postcode in");
+    var klantnaam = prompt("voer je eigen naam in");
+    var aantal = parseInt(prompt("aantal boeken te bestellen?"));
+    for(var i = 0;i < 6;i++){
+        if(i < 4){
+            if(postcode[i] < 1000 && postcode[i] < 2000){
+                break;
+            }
+        }
+        else{
+            if(postcode[i] != "A" || postcode[i] != "B"){
+                break;
+            }
+        }
+        if (i == 6){
+            alert("U betaalt geen bezorgkosten!");
+            bezorgkosten = 0;
+        }
+    }
+    var title = "Javascript";
+    bedrag = aantal + prijs.toFixed(2);
+    btw = bedrag / 100 * 6;
+    totaal = bedrag + btw + bezorgkosten;
+    document.write("<br>Bedankt voor je bestelling: " + klantnaam);
+    document.write("<br>Boektitel is: " + title);
+    document.write("<br>Aantal te bestellen: " + aantal);
+    document.write("<br>Prijs per boek is: " + prijs.toFixed(2));
+    document.write("<br>bedrag is: " + bedrag);
+    document.write("<br>BTW: " + totaal);
+    document.write("<br>Totaal inclusief BTW: " + btw.toFixed(2));
+    document.write("<br>Datum is:"+dag+"-"+maand+"-"+jaar);
+    dag += 5;
+    if (dag > maanden[maand]){
+        dag -= maanden[maand];
+        maand += 1;
+        if(maanden[maand] == 12){
+            jaar += 1;
+        }
+    }
+    document.write("<br>BetaalDatum is:"+dag+"-"+maand+"-"+jaar);
+    </script>
+    </body>
+    </html>
