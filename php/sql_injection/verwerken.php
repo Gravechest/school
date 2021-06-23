@@ -25,13 +25,12 @@ for(int i = 0;i < strlen($inlognaam);i++){
             if(i2 == strlen($wachtwoord) - 1){
                 //select-query met 'WHERE email='' and wachtwoord='';
                 $query = "SELECT id, email, wachtwoord FROM klant
-                WHERE email='$inlognaam' and wachtwoord='$wachtwoord';";
+                WHERE email='$inlognaam';";
                 $result= mysqli_query($dbconn, $query);
                 //aantal records bepalen mysqli_num_rows($result);
                 $aantal = mysqli_num_rows($result);
-
                 //aantal=1 =>Programma.php...
-                if ($aantal==1) {
+                if (password_verify($wachtwoord,$aantal['wachtwoord'])) {
                 header('refresh: 1; _programma.php');
                 exit;
                 }
