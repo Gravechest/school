@@ -87,7 +87,14 @@ namespace C_opdrachten
             switch (calcType)
             {
                 case 1:
-                    output.Text = Convert.ToString(input * int.Parse(output.Text));
+                    try
+                    {
+                        output.Text = Convert.ToString(input * int.Parse(output.Text));
+                    }
+                    catch
+                    {
+                        output.Text = "dit is helaas niet mogelijk";
+                    }
                     break;
                 case 2:
                     try
@@ -100,10 +107,24 @@ namespace C_opdrachten
                     }
                     break;
                 case 3:
-                    output.Text = Convert.ToString(input - int.Parse(output.Text));
+                    try
+                    {
+                        output.Text = Convert.ToString(input - int.Parse(output.Text));
+                    }
+                    catch
+                    {
+                        output.Text = "dit is helaas niet mogelijk";
+                    }
                     break;
                 case 4:
-                    output.Text = Convert.ToString(input + int.Parse(output.Text));
+                    try
+                    {
+                        output.Text = Convert.ToString(input + int.Parse(output.Text));
+                    }
+                    catch
+                    {
+                        output.Text = "dit is helaas niet mogelijk";
+                    }
                     break;
             }
         }
